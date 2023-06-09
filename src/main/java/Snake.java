@@ -5,16 +5,18 @@ public class Snake {
     private Rect[] body = new Rect[100];
     private double bodyWidth, bodyHeight;
     private int size, tail = 0, head = 0;
-
     private double ogWaitBetweenUpdates = 0.1;
     private double waitTimeLeft = ogWaitBetweenUpdates;
-
     private Directions direction = Directions.RIGHT;
+    private Rect background;
 
-    public Snake(int size, double startX, double startY, double bodyWidth, double bodyHeight) {
+    public Snake(int size, double startX, double startY, double bodyWidth, double bodyHeight, Rect background) {
+
         this.size = size;
         this.bodyWidth = bodyWidth;
         this.bodyHeight = bodyHeight;
+        this.background = background;
+
         for (int i = 0; i <= size; i++) {
             Rect bodyPiece = new Rect( startX + i * bodyWidth, startY, bodyWidth, bodyHeight);
             body[i] = bodyPiece;
@@ -29,7 +31,12 @@ public class Snake {
 
     public boolean intersectingWithSelf() {
         Rect headR = body[head];
-        return intersectingWithRect(headR);
+        return intersectingWithRect(headR) || intersectingWithScreen(headR);
+    }
+    
+    public boolean intersectingWithScreen(Rect head) {
+        return (head.x < background.x || (head.x + head.width) > background.x + background.width ||
+                head.y < background.y - Constants.TILE_WIDTH || (head.y + head.height) > background.y + background.height);
     }
 
     public boolean intersectingWithRect(Rect rect) {

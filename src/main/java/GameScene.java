@@ -11,7 +11,7 @@ public class GameScene extends Scene {
     public GameScene(KL keyListener) {
         background = new Rect(0, 0, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
         foreground = new Rect(24, 42, Constants.TILE_WIDTH * 31, Constants.TILE_WIDTH * 22);
-        snake = new Snake(4, 48, 65, Constants.TILE_WIDTH, Constants.TILE_WIDTH);
+        snake = new Snake(4, 48, 65, Constants.TILE_WIDTH, Constants.TILE_WIDTH, foreground);
         this.keyListener = keyListener;
         food = new Food(foreground, snake, 12, 12, new Color(49, 87, 39));
         food.spawn();
