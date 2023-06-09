@@ -26,7 +26,27 @@ public class Snake {
     }
 
     public void grow() {
-        System.out.println("Growing");
+        double newX = 0;
+        double newY = 0;
+
+        if (direction == Directions.RIGHT) {
+            newX = body[tail].x - bodyWidth;
+            newY = body[tail].y;
+        } else if (direction == Directions.LEFT) {
+            newX = body[tail].x + bodyWidth;
+            newY = body[tail].y;
+        } else if (direction == Directions.UP) {
+            newX = body[tail].x;
+            newY = body[tail].y + bodyHeight;
+        } else if (direction == Directions.DOWN) {
+            newX = body[tail].x;
+            newY = body[tail].y - bodyHeight;
+        }
+
+        Rect newBodyPiece = new Rect(newX, newY, bodyWidth, bodyHeight);
+
+        tail = (tail - 1) % body.length;
+        body[tail] = newBodyPiece;
     }
 
     public boolean intersectingWithSelf() {
