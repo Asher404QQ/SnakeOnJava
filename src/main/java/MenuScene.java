@@ -1,23 +1,19 @@
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 public class MenuScene extends Scene{
-    private KL keyListener;
     private ML mouseListener;
     private BufferedImage title, play, playPressed, exit, exitPressed, hackedTitle;
+    private BufferedImage playCurrentImage, exitCurrentImage, titleCurrentImage;
     private Rect playRect, exitRect, titleRect;
 
-    private BufferedImage playCurrentImage, exitCurrentImage, titleCurrentImage;
-
-    public MenuScene(KL keyListener, ML mouseListener) {
-        this.keyListener = keyListener;
+    public MenuScene(ML mouseListener) {
         this.mouseListener = mouseListener;
 
         try {
-            BufferedImage spriteSheet = ImageIO.read(new File("D:\\Snake\\src\\main\\resources\\menuSprite.png"));
+            BufferedImage spriteSheet = ImageIO.read(new File("\\Snake\\src\\main\\resources\\menuSprite.png"));
             title = spriteSheet.getSubimage(9, 470, 487, 119);
             hackedTitle = spriteSheet.getSubimage(9, 155,404, 121);
             play = spriteSheet.getSubimage(14, 373, 239, 79);

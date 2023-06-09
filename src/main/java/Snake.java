@@ -102,7 +102,7 @@ public class Snake {
         }
 
         if (intersectingWithSelf()) {
-            Window.getWindow().changeState(0);
+            Window.getWindow().changeState(3);
         }
 
         waitTimeLeft = ogWaitBetweenUpdates;
