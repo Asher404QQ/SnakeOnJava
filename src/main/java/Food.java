@@ -44,8 +44,4 @@ public class Food {
         graphics2D.setColor(color);
         graphics2D.fillRect((int)this.rect.x + xPadding, (int)this.rect.y + xPadding, width, height);
     }
-
-    public int getCount() {
-        return count;
-    }
 }

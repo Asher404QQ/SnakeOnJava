@@ -13,7 +13,6 @@ public class GameOverScene extends Scene{
 
     public GameOverScene(ML mouseListener) {
         this.mouseListener = mouseListener;
-        System.out.println(Food.score);
 
         try {
             BufferedImage background = ImageIO.read(new File("\\Snake\\src\\main\\resources\\background.png"));
@@ -45,7 +44,7 @@ public class GameOverScene extends Scene{
         menuCurrentImage = menu;
         restartCurrentImage = restart;
 
-        menuRect = new Rect(290, 340, 223, 60);
+        menuRect = new Rect(290, 360, 223, 60);
         restartRect = new Rect(232, 260, 343, 60);
     }
     @Override
