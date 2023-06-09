@@ -7,6 +7,8 @@ public class Food {
     private Color color;
     private int xPadding;
     public boolean isSpawned;
+    private int count = -1;
+    public static int score;
 
     public Food(Rect background, Snake snake, int width, int height, Color color) {
         this.background = background;
@@ -24,6 +26,8 @@ public class Food {
             double randY = (int) (Math.random() * (int)(background.height / Constants.TILE_WIDTH)) * Constants.TILE_WIDTH + background.y;
             this.rect.x = randX;
             this.rect.y = randY;
+            count++;
+            score = count;
         } while (snake.intersectingWithRect(this.rect));
         isSpawned = true;
     }
@@ -39,5 +43,9 @@ public class Food {
     public void draw(Graphics2D graphics2D) {
         graphics2D.setColor(color);
         graphics2D.fillRect((int)this.rect.x + xPadding, (int)this.rect.y + xPadding, width, height);
+    }
+
+    public int getCount() {
+        return count;
     }
 }
