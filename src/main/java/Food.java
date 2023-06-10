@@ -28,10 +28,6 @@ public class Food {
             this.rect.y = randY;
             count++;
             score = count;
-
-            System.out.println("Score = " + score);
-            System.out.println("Count = " + count);
-
         } while (snake.intersectingWithRect(this.rect));
         isSpawned = true;
     }
