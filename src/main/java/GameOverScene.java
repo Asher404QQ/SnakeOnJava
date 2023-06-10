@@ -89,7 +89,7 @@ public class GameOverScene extends Scene{
             if(scoreNum[i] == '1') {graphics.drawImage(one, x, y, 11, scoreHeight, null); x += 14;}
             if(scoreNum[i] == '2') {graphics.drawImage(two, x, y, 31, scoreHeight, null); x += 34;}
             if(scoreNum[i] == '3') {graphics.drawImage(three, x, y, 29, scoreHeight, null); x += 32;}
-            if(scoreNum[i] == '4') {graphics.drawImage(four, x, y, 30, scoreHeight, null); x += 3;}
+            if(scoreNum[i] == '4') {graphics.drawImage(four, x, y, 30, scoreHeight, null); x += 33;}
             if(scoreNum[i] == '5') {graphics.drawImage(five, x, y, 31, scoreHeight, null); x += 34;}
             if(scoreNum[i] == '6') {graphics.drawImage(six, x, y, 31, scoreHeight, null); x += 34;}
             if(scoreNum[i] == '7') {graphics.drawImage(seven, x, y, 30, scoreHeight, null); x += 33;}
